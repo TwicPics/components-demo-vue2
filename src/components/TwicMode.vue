@@ -1,82 +1,69 @@
 <template>
-  <!-- demonstrates mode features (contain or cover) -->
-  <TwicWrapper>
-    <div class="twic-mode-container">
-      <TwicAbstract
-        title="mode property"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-mode-property-k8trl9"
-        codeSandBoxName="TwicPics x Vue - Mode property"
-      >
+  <div id="twic-mode-container">
+    <TwicWrapper gitHubUrl="src/components/TwicMode.vue">
+      <TwicAbstract title="mode property">
         <p>
           <strong>
             The
-            <dfn title="mode property">mode</dfn>
-            property determines if the image fills or sits inside the
-            area.
+            <dfn>mode</dfn>&nbsp; property determines if the image fills or sits
+            inside the area.
           </strong>
         </p>
         <p>Here are the two accepted values:</p>
         <ul>
           <li>
-            <span class="twic-code">cover</span>:
-            <span> the image fills the area and is cropped accordingly.</span>
+            <Code>cover</Code>:<span>
+              the image fills the area and is cropped accordingly.</span
+            >
           </li>
           <li>
-            <span class="twic-code">contain</span>:
-            <span> the image sits inside the area with no cropping.</span>
+            <Code>contain</Code>:<span>
+              the image sits inside the area with no cropping.</span
+            >
           </li>
         </ul>
       </TwicAbstract>
       <div class="twic-grid">
         <div class="twic-item">
-          <button class="twic-button" v-on:click="onChangeMode">
+          <button class="twic-button" @click="changeMode">
             Click to change the mode value
           </button>
           <TwicImg
             v-if="show"
-            :src="imgUrl"
+            :src="IMG_URL"
             :mode="modeValues[modeIndex]"
           ></TwicImg>
           <span>
-            <span class="twic-code">mode="{{ modeValues[ modeIndex ] }}"</span>
+            <Code>mode="{{ modeValues[modeIndex] }}"</Code>
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl"></TwicImg>
-          <span>No mode set (<span class="twic-code">cover</span> by default)</span>
+          <TwicImg :src="IMG_URL" />
+          <span> No mode set (<Code>cover</Code>by default) </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" mode="cover"></TwicImg>
+          <TwicImg :src="IMG_URL" mode="cover" />
           <span>
-            <span class="twic-code">mode="cover"</span>
+            <Code>mode="cover"</Code>
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" mode="contain"></TwicImg>
+          <TwicImg :src="IMG_URL" mode="contain" />
           <span>
-            <span class="twic-code">mode="contain"</span>
+            <Code>mode="contain"</Code>
           </span>
         </div>
       </div>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicMode",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
-      imgUrl: `components/fox.jpg`,
+      IMG_URL: `components/fox.jpg`,
       modeValues: [`cover`, `contain`],
       modeIndex: 0,
       // trick to force reload TwicImg
@@ -84,7 +71,7 @@ export default {
     };
   },
   methods: {
-    onChangeMode() {
+    changeMode() {
       setTimeout(() => (this.show = false));
       this.modeIndex = (this.modeIndex + 1) % this.modeValues.length;
       setTimeout(() => (this.show = true));
@@ -94,7 +81,7 @@ export default {
 </script>
 
 <style lang="scss">
-.twic-mode-container {
+#twic-mode-container {
   .twic-item .twic-w {
     background-color: #00ffa3;
     display: block;

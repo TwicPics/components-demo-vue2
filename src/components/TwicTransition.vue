@@ -1,173 +1,140 @@
 <template>
-  <!-- demonstrates transition features -->
-  <TwicWrapper>
-    <div class="twic-transition-container">
-      <TwicAbstract
-        title="transition properties"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-transition-property-gb31ok"
-        codeSandBoxName="TwicPics x Vue - Transition property"
-      >
+  <div id="twic-transition-container">
+    <TwicWrapper gitHubUrl="src/components/TwicTransition.vue">
+      <TwicAbstract title="transition properties">
         <p>
           <strong>
-            The <dfn title="transition property">transition</dfn> properties allow you to
-            customize the effect used to reveal the image once it has been loaded
-          </strong>.
+            The <dfn>transition</dfn> properties allow you to customize the
+            effect used to reveal the image once it has been loaded
+          </strong>
+          .
         </p>
         <ul>
           <li>
-            <span class="twic-code">transition</span>: determines how the image
-            will be revealed once loaded (default:
-            <span class="twic-code">fade</span>). The possible values are:
-            <br />
-            - <span class="twic-code">fade</span>, for a
-            <em>fade in</em> effect<br />
-            - <span class="twic-code">zoom</span>, for a
-            <em>zoom</em> effect<br />
-            - <span class="twic-code">fade+zoom</span>, for both
-            <em>fade</em> and <em>zoom</em> effects<br />
-            - or <span class="twic-code">none</span>, for no transition
+            <Code>transition</Code>: determines how the image will be revealed
+            once loaded (default: <Code>fade</Code>). The possible values are:
+            <br />-<Code>fade</Code>, for a <em>fade in</em> effect
+            <br />-<Code>zoom</Code>, for a <em>zoom</em> effect
+            <br />-<Code>fade+zoom</Code>, for both&nbsp; <em>fade</em> and
+            <em>zoom</em> effects <br />- or<Code>none</Code>, for no transition
           </li>
           <li>
-            <span class="twic-code">transitionDelay</span>: transition delay of
-            the transition effect (default: <span class="twic-code">0ms</span>).
+            <Code>transitionDelay</Code>: transition delay of the transition
+            effect (default:&nbsp; <Code>0ms</Code>).
           </li>
           <li>
-            <span class="twic-code">transitionDuration</span>: duration of the
-            transition effect (default: <span class="twic-code">400ms</span>).
+            <Code>transitionDuration</Code>: duration of the transition effect
+            (default:&nbsp; <Code>400ms</Code>).
           </li>
           <li>
-            <span class="twic-code">transitionTimingFunction</span>: CSS timing
-            function applied to the transition effect (default:
-            <span class="twic-code">ease</span>).
+            <Code>transitionTimingFunction</Code>: CSS timing function applied
+            to the transition effect (default: <Code>ease</Code>).
           </li>
         </ul>
       </TwicAbstract>
       <div class="twic-testing-container">
-        <button class="twic-button" v-on:click="togglePlaceholder">
-          {{ togglePlaceholderBtnText }}
+        <button
+          class="twic-button"
+          @click="() => (showTransitions = !showTransitions)"
+        >
+          {{ showTransitions ? IMG_TEXT : TRANSITIONS_TEXT }}
         </button>
       </div>
-      <div
-        class="twic-grid"
-        v-bind:class="{ 'show-placeholders': showPlaceholder }"
-      >
+      <div :class="`twic-grid ${showTransitions && `show-transitions`}`">
         <div class="twic-item">
-          <TwicImg :src="imgUrl" placeholder="preview"> </TwicImg>
+          <TwicImg :src="IMG_URL" placeholder="preview" />
           <span>Default values</span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" transition="none" placeholder="preview">
-          </TwicImg>
+          <TwicImg :src="IMG_URL" transition="none" placeholder="preview" />
           <span>
-            <span class="twic-code">transition="none"</span>
+            <Code>transition="none"</Code>
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" transition="zoom"> </TwicImg>
+          <TwicImg :src="IMG_URL" transition="zoom" />
           <span>
-            <span class="twic-code">transition="zoom"</span>
+            <Code>transition="zoom"</Code>
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" transition="fade"> </TwicImg>
+          <TwicImg :src="IMG_URL" transition="fade" />
           <span>
-            <span class="twic-code">transition="fade"</span>
+            <Code>transition="fade"</Code>
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" transition="fade+zoom"> </TwicImg>
+          <TwicImg :src="IMG_URL" transition="fade+zoom" />
           <span>
-            <span class="twic-code">transition="fade+zoom"</span>
+            <Code>transition="fade+zoom"</Code>
           </span>
         </div>
         <div class="twic-item">
           <TwicImg
-            :src="imgUrl"
+            :src="IMG_URL"
             transitionDuration="2000ms"
             placeholder="preview"
-          >
-          </TwicImg>
+          />
           <span>
-            <span class="twic-code">transitionDuration="2000ms"</span>
+            <Code>transitionDuration="2000ms"</Code>
           </span>
         </div>
         <div class="twic-item">
           <TwicImg
-            :src="imgUrl"
+            :src="IMG_URL"
             transitionDuration="2000ms"
             transitionTimingFunction="linear"
             placeholder="preview"
-          >
-          </TwicImg>
+          />
           <span>
-            <span class="twic-code">transitionDuration="2000ms"</span>
-            and <span class="twic-code">transitionTimingFunction="linear"</span>
+            <Code>transitionDuration="2000ms"</Code>
+            and<Code>transitionTimingFunction="linear"</Code>
           </span>
         </div>
         <div class="twic-item">
           <TwicImg
-            :src="imgUrl"
+            :src="IMG_URL"
             transitionDelay="2000ms"
             transitionTimingFunction="linear"
             placeholder="preview"
-          >
-          </TwicImg>
+          />
           <span>
-            <span class="twic-code">transitionDelay="2000ms"</span>
+            <Code>transitionDelay="2000ms"</Code>
           </span>
         </div>
       </div>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicTransition",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
-      imgUrl: `components/peacock.jpg`,
-      showPlaceholder: false,
+      IMG_TEXT: `Click to show the images`,
+      IMG_URL: `components/peacock.jpg`,
+      TRANSITIONS_TEXT: `Click to reveal the transitions`,
+      showTransitions: false,
       togglePlaceholderBtnText: `Click to reveal the transitions`,
     };
-  },
-  methods: {
-    togglePlaceholder() {
-      this.showPlaceholder = !this.showPlaceholder;
-      if (this.showPlaceholder) {
-        this.togglePlaceholderBtnText = `Click to show the images`;
-      } else {
-        this.togglePlaceholderBtnText = `Click to reveal the transitions`;
-      }
-    },
   },
 };
 </script>
 
 <style lang="scss">
-.twic-transition-container {
-  .show-placeholders {
-    .twic-tf {
-      & img {
-        visibility: hidden !important;
-      }
-      & img + div{
-        opacity: 1 !important;
-      }
+#twic-transition-container {
+  .show-transitions {
+    .twic-tf img:hover {
+      opacity: 0 !important;
     }
-    .twic-tz {
-      & img {
-        transform: scale(0) !important;
-      }
+
+    .twic-tf img + div {
+      opacity: 1 !important;
+    }
+
+    .twic-tz img {
+      transform: scale(0) !important;
     }
   }
 }

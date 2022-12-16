@@ -1,33 +1,31 @@
 <template>
-  <TwicWrapper>
-    <div class="twic-position-container">
-      <TwicAbstract
-        title="position property"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-position-property-bqwcdn"
-        codeSandBoxName="TwicPics x Vue - Position property"
-      >
+  <div id="twic-position-container">
+    <TwicWrapper gitHubUrl="src/components/TwicPosition.vue">
+      <TwicAbstract title="position property">
         <p>
-          In <span class="twic-code">contain</span> mode,
+          In<Code>contain</Code>mode,
           <strong>
-            the <dfn title="position property">position</dfn> property
-            changes the location of the image inside the area of the component.
+            the <dfn>position</dfn> property changes the location of the image
+            inside the area of the component.
           </strong>
         </p>
         <p>
           The syntax is the same as for CSS position properties (e.g.
-          <span class="twic-code"> background-position</span> or
-          <span class="twic-code"> object-position</span>).
+          <Code>background-position</Code>or <Code>object-position</Code>).
         </p>
         <p>
-          Useful values are <span class="twic-code"> top</span>,
-          <span class="twic-code"> bottom</span>,
-          <span class="twic-code"> left</span>, and
-          <span class="twic-code"> right</span>, but all valid CSS position
-          values are valid.
+          Useful values
+          are<Code>top</Code>,<Code>bottom</Code>,<Code>left</Code>, and
+          <Code>right</Code>, but all valid CSS position values are valid.
+        </p>
+        <p>
+          If you only need border-based positionning, you can also use&nbsp;
+          <a href="/anchor" target="_blank" rel="noreferrer"> anchor </a>
+          &nbsp; property.
         </p>
       </TwicAbstract>
       <div class="twic-testing-container">
-        <button class="twic-button" v-on:click="onChangePosition">
+        <button class="twic-button" @click="onChangePosition">
           Click to change the position
         </button>
       </div>
@@ -41,7 +39,11 @@
           >
           </TwicImg>
           <span>
-            <span class="twic-code">position="{{ verticalPositionArray[verticalPositionIndex] }}"</span>
+            <Code
+              >position="{{
+                verticalPositionArray[verticalPositionIndex]
+              }}"</Code
+            >
           </span>
         </div>
         <div class="twic-item">
@@ -53,37 +55,31 @@
           >
           </TwicImg>
           <span>
-            <span class="twic-code">position="{{ horizontalPositionArray[horizontalPositionIndex] }}"</span>
-          </span
+            <Code
+              >position="{{
+                horizontalPositionArray[horizontalPositionIndex]
+              }}"</Code
+            ></span
           >
         </div>
         <div class="twic-item">
           <TwicImg :src="landscapeImgUrl" mode="contain" placeholder="none">
           </TwicImg>
-          <span>No position set (<span class="twic-code"> center</span> by default)</span>
+          <span> No position set (<Code>center</Code>by default) </span>
         </div>
         <div class="twic-item">
           <TwicImg :src="portraitImgUrl" mode="contain" placeholder="none">
           </TwicImg>
-          <span>No position set (<span class="twic-code"> center</span> by default)</span>
+          <span> No position set (<Code>center</Code>by default) </span>
         </div>
       </div>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicPosition",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
       landscapeImgUrl: `components/position/horse.jpg`,
@@ -107,7 +103,7 @@ export default {
 </script>
 
 <style lang="scss">
-.twic-position-container {
+#twic-position-container {
   .twic-item .twic-w {
     background-color: #00ffa3;
     display: block;

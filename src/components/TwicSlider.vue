@@ -1,44 +1,31 @@
 <template>
-  <!-- displays images with a horizontal scroll bar -->
-  <TwicWrapper>
-    <TwicAbstract
-      title="A slider"
-      codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-slider-l1u505"
-      codeSandBoxName="TwicPics x Vue - Slider sample"
-    >
-      <p>
-        A simple slider that uses TwicPics for automatic lazy-loading, CLS
-        optimization and art directions adaptation.
-      </p>
-      <p>
-        <strong>Change the width of your browser</strong> to see the image
-        aspect-ratio adapt according to the CSS rules.
-      </p>
-    </TwicAbstract>
-    <div class="twic-slider-container">
+  <div id="twic-slider-container">
+    <TwicWrapper gitHubUrl="src/components/TwicSlider.vue">
+      <TwicAbstract title="A slider">
+        <p>
+          A simple slider that uses TwicPics for automatic lazy-loading, CLS
+          optimization and art directions adaptation.
+        </p>
+        <p>
+          <strong>Change the width of your browser</strong> to see the image
+          aspect-ratio adapt according to the CSS rules.
+        </p>
+      </TwicAbstract>
+
       <ul class="slider">
-        <li class="slider-item" v-for="img in images" :key="img.url">
+        <li v-for="(image, index) in images" :key="index" class="slider-item">
           <figure class="card twic-item">
-            <TwicImg :src="img.url"></TwicImg>
+            <TwicImg :src="image.url" />
           </figure>
         </li>
       </ul>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicSlider",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
       images: [
@@ -97,7 +84,7 @@ export default {
 </script>
 
 <style lang="scss">
-.twic-slider-container {
+#twic-slider-container {
   .slider {
     display: flex;
     list-style: none;
@@ -130,25 +117,25 @@ export default {
     background-color: rgba(black, 0.5);
     border-radius: 3px;
   }
-}
 
-.slider-item {
-  flex-basis: 100%;
-  --twic-ratio: calc(4 / 5);
-}
-
-.slider-item {
-  @media (min-width: 768px) {
-    flex-basis: 50%;
-    --twic-ratio: calc(1);
+  .slider-item {
+    flex-basis: 100%;
+    --twic-ratio: calc(4 / 5);
   }
 
-  @media (min-width: 1024px) {
-    --twic-ratio: calc(4 / 3);
-  }
+  .slider-item {
+    @media (min-width: 768px) {
+      flex-basis: 50%;
+      --twic-ratio: calc(1);
+    }
 
-  @media (min-width: 1280px) {
-    flex-basis: 30%;
+    @media (min-width: 1024px) {
+      --twic-ratio: calc(4 / 3);
+    }
+
+    @media (min-width: 1280px) {
+      flex-basis: 30%;
+    }
   }
 }
 </style>

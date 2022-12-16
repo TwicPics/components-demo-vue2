@@ -1,100 +1,83 @@
 <template>
-  <!-- demonstrates ratio features -->
-  <TwicWrapper>
-    <div class="twic-ratio-container">
-      <TwicAbstract
-        title="ratio property"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-ratio-property-erk6kw"
-        codeSandBoxName="TwicPics x Vue - Ratio property"
-      >
+  <div id="twic-ratio-container">
+    <TwicWrapper gitHubUrl="src/components/TwicRatio.vue">
+      <TwicAbstract title="ratio property">
         <p>
           <strong>
-            The <dfn title="ratio property">ratio</dfn> property determines the value
-            of the width/height ratio of the image display area.
+            The <dfn>ratio</dfn> property determines the value of the
+            width/height ratio of the image display area.
           </strong>
         </p>
         <p>Its value can be:</p>
         <ul>
           <li>
-            a ratio expression of the form width/height like
-            <span class="twic-code">4/3</span>,
-            <span class="twic-code">16/9</span>, or
-            <span class="twic-code">1/1</span>.
+            a ratio expression of the form <b>width/height</b> or
+            <b>width:height</b> like
+            <Code>4/3</Code>,<Code>4:3</Code>,<Code>800/600</Code>...
           </li>
           <li>
             a number that is the result of such an expression like
-            <span class="twic-code">1.85</span>,
-            <span class="twic-code">2</span>, or
-            <span class="twic-code">0.5</span>.
+            <Code>1.85</Code>,<Code>2</Code>, or <Code>0.5</Code>.
+          </li>
+          <li>
+            "none" as in<Code>ratio="none"</Code>. In this case the media
+            displayed has a "free" ratio defined by the dimensions of its
+            container. Particularly useful in the case of&nbsp;
+            <a href="/hero" target="_blank" rel="noreferrer">
+              image or video hero
+            </a>
+            .
           </li>
         </ul>
         <p>
-          A square area (<span class="twic-code"> ratio="1"</span>) will be
-          created by default.
+          A square area (<Code>ratio="1"</Code>) will be created by default.
         </p>
       </TwicAbstract>
       <div class="twic-testing-container">
-        <button class="twic-button" v-on:click="onChangeRatio">
+        <button class="twic-button" @click="onChangeRatio">
           Click to change the aspect-ratio
         </button>
-        <button class="twic-button" v-on:click="onChangeAreaWidth">
+        <button
+          class="twic-button"
+          @click="() => (fullWidthAera = !fullWidthAera)"
+        >
           Click to change the area width
         </button>
       </div>
-      <div
-        class="twic-grid"
-        v-bind:class="{
-          'modal-opened': show,
-          'half-width': fullWidthAera === false,
-        }"
-      >
+      <div :class="`twic-grid ${fullWidthAera && `half-width`}`">
         <div class="twic-item">
-          <TwicImg v-if="show" :src="imgUrl" :ratio="ratioValues[ratioIndex]">
-          </TwicImg>
+          <TwicImg :src="IMG_URL" :ratio="ratioValues[ratioIndex]" />
           <span>
-            <span class="twic-code">ratio="{{
-              ratioValues[ratioIndex] ? ratioValues[ratioIndex] : 1
-            }}"</span>
-            {{ !ratioValues[ratioIndex] ? "- default ratio" : "" }}
-            (mode is <span class="twic-code">cover</span>)
+            <span class="twic-code">
+              ratio={{ ratioValues[ratioIndex] ? ratioValues[ratioIndex] : 1 }}
+            </span>
+            (mode is<Code>cover</Code>)
           </span>
         </div>
         <div class="twic-item">
           <TwicImg
-            v-if="show"
-            :src="imgUrl"
+            :src="IMG_URL"
             mode="contain"
             :ratio="ratioValues[ratioIndex]"
-          >
-          </TwicImg>
+          />
           <span>
-            <span class="twic-code">ratio="{{
-              ratioValues[ratioIndex] ? ratioValues[ratioIndex] : 1
-            }}"</span>
-            {{ !ratioValues[ratioIndex] ? "- default ratio" : "" }}
-            (mode is <span class="twic-code">contain</span>)
+            <span class="twic-code">
+              ratio={{ ratioValues[ratioIndex] ? ratioValues[ratioIndex] : 1 }}
+            </span>
+            (mode is<Code>contain</Code>)
           </span>
         </div>
       </div>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicRatio",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
-      imgUrl: `components/woman-and-winter.jpg`,
+      IMG_URL: `components/woman-and-winter.jpg`,
       ratioValues: [`2.39`, `16/9`, `4/3`, ``, `0.75`],
       ratioIndex: 0,
       fullWidthAera: true,
@@ -108,18 +91,15 @@ export default {
       this.ratioIndex = (this.ratioIndex + 1) % this.ratioValues.length;
       setTimeout(() => (this.show = true));
     },
-
-    onChangeAreaWidth() {
-      this.fullWidthAera = !this.fullWidthAera;
-    },
   },
 };
 </script>
 
 <style lang="scss">
-.twic-ratio-container {
+#twic-ratio-container {
   .twic-grid {
     --twic-grid-columns-width: 40%;
+
     &.full-width {
       .twic-item {
         width: 100%;

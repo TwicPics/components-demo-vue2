@@ -1,6 +1,6 @@
 <template>
   <div id="twic-art-direction-container">
-    <TwicWrapper gitHubUrl="src/lib/twicArtDirections/index.jsx">
+    <TwicWrapper gitHubUrl="src/components/TwicArtDirections.vue">
       <TwicAbstract title="Art directions with CSS media queries">
         <p>
           Setting up components using CSS enables hassle-free responsive
@@ -30,9 +30,9 @@ export default {
   name: "TwicArtDirections",
   data() {
     return {
-      IMG_URL: `components/greece.jpg`
+      IMG_URL: `components/greece.jpg`,
     };
-  }
+  },
 };
 </script>
 

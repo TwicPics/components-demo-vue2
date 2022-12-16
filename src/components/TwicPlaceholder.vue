@@ -1,15 +1,11 @@
 <template>
-  <!-- demonstrates placeholders features -->
-  <TwicWrapper>
-    <div class="twic-placeholder-container">
-      <TwicAbstract
-        title="placeholder property"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-placeholder-property-8ltkei"
-        codeSandBoxName="TwicPics x Vue - Placeholder property"
-      >
+  <div id="twic-placeholder-container">
+    <TwicWrapper gitHubUrl="src/components/TwicPlaceholder.vue">
+      <TwicAbstract title="placeholder property">
         <p>
           <strong>
-            The <dfn title="placeholder property">placeholder</dfn> property helps you optimize user experience, CLS, and implement the LQIP technique.
+            The <dfn>placeholder</dfn> property helps you optimize user
+            experience, CLS, and implement the LQIP technique.
           </strong>
         </p>
         <p>
@@ -18,94 +14,77 @@
           actually loaded.
         </p>
         <p>
-          The <span class="twic-code"> placeholder </span> values can be:
-          <span class="twic-code">preview</span>,
-          <span class="twic-code"> meancolor </span>,
-          <span class="twic-code"> maincolor </span> or
-          <span class="twic-code"> none </span>.
+          The<Code>placeholder</Code>values can be:
+          <Code>preview</Code>,<Code>meancolor</Code>,<Code>maincolor</Code>or
+          <Code>none</Code>.
         </p>
         <p>
-          The browser is told to load a SVG version as a backgroung image first,
+          The browser is told to load a SVG version as a background image first,
           then to replace it with the full version later on.
         </p>
         <p>
-          When set to <span class="twic-code">preview</span> (the default
-          value), a blurry version of your image is used as a background image.
+          When set to<Code>preview</Code>(the default value), a blurry version
+          of your image is used as a background image.
         </p>
       </TwicAbstract>
       <div class="twic-testing-container">
-        <button class="twic-button" v-on:click="togglePlaceholder">
-          {{ togglePlaceholderBtnText }}
+        <button
+          class="twic-button"
+          @click="() => (showPlaceholders = !showPlaceholders)"
+        >
+          {{
+            showPlaceholders
+              ? `Click to reveal images`
+              : `Click to reveal placeholders`
+          }}
         </button>
       </div>
-      <div
-        class="twic-grid"
-        v-bind:class="{ 'show-placeholders': showPlaceholders === true }"
-      >
+      <div :class="`twic-grid ${showPlaceholders ? `show-placeholders` : ``}`">
         <div class="twic-item">
-          <TwicImg :src="imgUrl" placeholder="preview"></TwicImg>
+          <TwicImg :src="IMG_URL" placeholder="preview" />
           <span>
-            <span class="twic-code">placeholder="preview"</span>
+            <Code>placeholder="preview"</Code>
             (default value)
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" placeholder="meancolor"></TwicImg>
+          <TwicImg :src="IMG_URL" placeholder="meancolor" />
           <span>
-            <span class="twic-code">placeholder="meancolor"</span>
+            <Code>placeholder="meancolor"</Code>
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" placeholder="maincolor"></TwicImg>
+          <TwicImg :src="IMG_URL" placeholder="maincolor" />
           <span>
-            <span class="twic-code">placeholder="maincolor"</span>
+            <Code>placeholder="maincolor"</Code>
           </span>
         </div>
         <div class="twic-item">
-          <TwicImg :src="imgUrl" placeholder="none"></TwicImg>
+          <TwicImg :src="IMG_URL" placeholder="none" />
           <span>
-            <span class="twic-code">placeholder="none"</span>
+            <Code>placeholder="none"</Code>
           </span>
         </div>
       </div>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicPlaceholder",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
-      imgUrl: `components/cat.jpg`,
+      IMG_URL: `components/cat.jpg`,
       showPlaceholders: false,
       togglePlaceholderBtnText: `Click to reveal the placeholders`,
     };
-  },
-  methods: {
-    togglePlaceholder() {
-      this.showPlaceholders = !this.showPlaceholders;
-      if (this.showPlaceholders) {
-        this.togglePlaceholderBtnText = `Click to show the images`;
-      } else {
-        this.togglePlaceholderBtnText = `Click to reveal the placeholders`;
-      }
-    },
   },
 };
 </script>
 
 <style lang="scss">
-.twic-placeholder-container {
+#twic-placeholder-container {
   .show-placeholders {
     img {
       visibility: hidden !important;

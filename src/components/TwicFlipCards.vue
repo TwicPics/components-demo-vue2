@@ -1,11 +1,7 @@
 <template>
-  <TwicWrapper>
-    <div class="twic-flip-card-container">
-      <TwicAbstract
-        title="Flip cards"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-flip-cards-ylzujp"
-        codeSandBoxName="TwicPics x Vue - Flip cards"
-      >
+  <div id="twic-flip-card-container">
+    <TwicWrapper gitHubUrl="src/components/TwicFlipCards.vue">
+      <TwicAbstract title="Flip cards">
         <p>Move your mouse over the images below.</p>
       </TwicAbstract>
       <div class="twic-grid">
@@ -24,22 +20,13 @@
           </div>
         </div>
       </div>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicFlipCards",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
       cards: [
@@ -82,12 +69,14 @@ export default {
 </script>
 
 <style lang="scss">
-.twic-flip-card-container {
+#twic-flip-card-container {
   .flip-card {
     position: relative;
     background-color: transparent;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    perspective: 1000px;
+    /* Remove this if you don't want the 3D effect */
     padding-top: 100%;
+
     & figure {
       margin: unset;
     }

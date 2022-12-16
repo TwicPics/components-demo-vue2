@@ -1,14 +1,12 @@
 <template>
-  <TwicWrapper>
-    <TwicAbstract
-      title="Grid & zoom effect"
-      codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-grid-and-zoom-e7bl62"
-      codeSandBoxName="TwicPics x Vue - Grid & zoom effect"
-    >
-      <p>A responsive grid of images enhanced by zoom transition.</p>
-      <p><strong>Scroll down to experience lazy loading in action</strong>.</p>
-    </TwicAbstract>
-    <div class="twic-grid-and-zoom">
+  <div id="twic-grid-and-zoom">
+    <TwicWrapper gitHubUrl="src/components/TwicGridAndZoom.vue">
+      <TwicAbstract title="TwicPics grid & zoom">
+        <p>A responsive grid of images enhanced by zoom transition.</p>
+        <p>
+          <strong>Scroll down to experience lazy loading in action</strong>.
+        </p>
+      </TwicAbstract>
       <ul>
         <li v-for="(image, index) in images" :key="index" class="twic-item">
           <TwicImg
@@ -22,22 +20,13 @@
           </TwicImg>
         </li>
       </ul>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-
 export default {
   name: "TwicGridAndZoom",
-  components: {
-    TwicAbstract,
-    TwicWrapper,
-  },
   data() {
     return {
       seed: [
@@ -247,7 +236,7 @@ export default {
 </script>
 
 <style lang="scss">
-.twic-grid-and-zoom {
+#twic-grid-and-zoom {
   ul {
     display: grid;
     gap: 1rem;
@@ -265,7 +254,7 @@ export default {
   }
 }
 
-.twic-grid-and-zoom ul {
+#twic-grid-and-zoom ul {
   @media screen and (min-width: 425px) {
     grid-template-columns: repeat(2, 1fr);
   }

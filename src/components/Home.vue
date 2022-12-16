@@ -24,7 +24,7 @@
                 v-else
                 :src="item.videoSrc"
                 ratio="0.95"
-                intrinsic="{item.intrinsic}"
+                :intrinsic="item.intrinsic"
               />
               <figcaption>
                 <p>{{ item.title }}</p>
@@ -49,72 +49,72 @@ export default {
             {
               route: `/art-directions`,
               imgSrc: `components/greece.jpg`,
-              title: `Art directions`
+              title: `Art directions`,
             },
             {
               route: `/basic-grid`,
               imgSrc: `https://assets.twicpics.com/examples/football.jpg`,
-              title: `Basic example`
+              title: `Basic example`,
             },
             {
               route: `/bulk-loading`,
               imgSrc: `components/bulk-loading/pool-1.jpg`,
               focus: `50px100p`,
-              title: `Bulk loading`
+              title: `Bulk loading`,
             },
             {
               route: `/color-blindness`,
               imgSrc: `components/color-blindless/umbrellas.jpg`,
-              title: `Color blindness`
+              title: `Color blindness`,
             },
             {
               route: `/flip-cards`,
               imgSrc: `components/flip/orange-1.jpg`,
-              title: `Flip cards`
+              title: `Flip cards`,
             },
             {
               route: `/grid-and-zoom`,
               imgSrc: `components/portraits/woman-1.jpg`,
-              title: `Grid & zoom`
+              title: `Grid & zoom`,
             },
             {
               route: `/hero`,
               imgSrc: `components/goldenGate.jpg`,
-              title: `Hero image`
+              title: `Hero image`,
             },
             {
               route: `/modal`,
               imgSrc: `components/modal/seagull.jpg`,
-              title: `Modal`
+              title: `Modal`,
             },
             {
               route: `/page-templating`,
               focus: `bottom`,
               imgSrc: `components/woman.jpg`,
-              title: `Page templating`
+              title: `Page templating`,
             },
             {
               route: `/short-videos`,
               videoSrc: `video/skater.mp4`,
               title: `Short videos`,
-              intrinsic: "1280x720"
+              intrinsic: "1280x720",
             },
             {
               route: `/slider`,
               imgSrc: `components/slider/pantone.jpg`,
-              title: `Slider`
+              title: `Slider`,
             },
             {
               route: `/slideshow`,
               imgSrc: `components/slideshow/space-1.jpg`,
-              title: `Slideshow`
+              title: `Slideshow`,
             },
             {
               route: `/style-driven`,
               imgSrc: `components/horse.jpg`,
-              title: `Style driven`
-            }
-          ]
+              title: `Style driven`,
+            },
+          ],
         },
         {
           title: `Properties`,
@@ -122,73 +122,73 @@ export default {
             {
               route: `/anchor`,
               imgSrc: `components/anchor/anchor.jpg`,
-              title: `anchor`
+              title: `anchor`,
             },
             {
               route: `/bot`,
               imgSrc: `components/bot/robot.jpg`,
-              title: `bot`
+              title: `bot`,
             },
             {
               route: `/eager`,
               imgSrc: `components/eager/subway-1.jpg`,
               preTransform: `flip=x`,
-              title: `eager`
+              title: `eager`,
             },
             {
               route: `/focus`,
               imgSrc: `components/puppy.jpg`,
-              title: `focus`
+              title: `focus`,
             },
             {
               route: `/intrinsic`,
               imgSrc: `components/intrinsic/moon.jpg`,
               focus: `50px50p`,
-              title: `intrinsic`
+              title: `intrinsic`,
             },
             {
               route: `/mode`,
               imgSrc: `components/fox.jpg`,
-              title: `mode`
+              title: `mode`,
             },
             {
               route: `/placeholder`,
               imgSrc: `components/cat.jpg`,
               focus: `50px50p`,
-              title: `placeholder`
+              title: `placeholder`,
             },
             {
               route: `/position`,
               imgSrc: `components/position/horse.jpg`,
               focus: `50px50p`,
-              title: `position`
+              title: `position`,
             },
             {
               route: `/pretransform`,
               imgSrc: `components/man-hiding-his-hands.jpg`,
-              title: `preTransform`
+              title: `preTransform`,
             },
             {
               route: `/ratio`,
               imgSrc: `components/woman-and-winter.jpg`,
               focus: `50px50p`,
-              title: `ratio`
+              title: `ratio`,
             },
             {
               route: `/state`,
               imgSrc: `components/state/autumn.jpg`,
-              title: `state`
+              title: `state`,
             },
             {
               route: `/transition`,
               imgSrc: `components/peacock.jpg`,
-              title: `transition`
-            }
-          ]
-        }
-      ]
+              title: `transition`,
+            },
+          ],
+        },
+      ],
     };
-  }
+  },
 };
 </script>
 

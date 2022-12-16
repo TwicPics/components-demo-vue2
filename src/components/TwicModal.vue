@@ -1,18 +1,14 @@
 <template>
-  <TwicWrapper>
-    <div class="twic-modal-container">
-      <TwicAbstract
-        title="A modal revealer"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-modal-b56wtp"
-        codeSandBoxName="TwicPics x Vue - Modal"
-      >
+  <div id="twic-modal-container">
+    <TwicWrapper gitHubUrl="src/components/TwicModal.vue">
+      <TwicAbstract title="A modal revealer">
         <p>Click on the image of your choice to reveal a modal.</p>
       </TwicAbstract>
       <div class="twic-grid">
         <div v-for="(image, imageIndex) in images" :key="image.url">
           <figure
             class="poster-wrapper twic-item"
-            v-on:click="openModal(imageIndex)"
+            @click="() => (idModalToOpen = imageIndex)"
           >
             <TwicImg :src="image.url" focus="auto" ratio="0.95"></TwicImg>
             <figcaption>
@@ -22,27 +18,21 @@
           <Modal
             :image="image"
             :show="imageIndex === idModalToOpen"
-            :onClose="closeModal"
+            :onClose="() => (idModalToOpen = null)"
           ></Modal>
         </div>
       </div>
-    </div>
-  </TwicWrapper>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
-import Modal from "./Modal.vue";
+import Modal from "../components/modal/Modal.vue";
 
 export default {
   name: "TwicModal",
   components: {
     Modal,
-    TwicAbstract,
-    TwicWrapper,
   },
   data() {
     return {
@@ -67,22 +57,15 @@ export default {
       idModalToOpen: null,
     };
   },
-  methods: {
-    openModal(idModalToOpen) {
-      this.idModalToOpen = idModalToOpen;
-    },
-    closeModal() {
-      this.idModalToOpen = null;
-    },
-  },
 };
 </script>
 
 <style lang="scss">
-.twic-modal-container {
+#twic-modal-container {
   figure.poster-wrapper {
     position: relative;
-    & figcaption {
+
+    figcaption {
       position: absolute;
       top: 0;
       right: 0;
@@ -99,13 +82,9 @@ export default {
       transition: opacity 0.3s;
       cursor: pointer;
     }
-    &:hover {
-      & img {
-        opacity: 0 !important;
-      }
-      & figcaption {
-        opacity: 1;
-      }
+
+    figcaption:hover {
+      opacity: 1;
     }
   }
 }

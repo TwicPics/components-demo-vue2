@@ -1,6 +1,6 @@
 <template>
   <div id="twic-basic-grid-container">
-    <TwicWrapper gitHubUrl="src/lib/twicBasicGrid/index.jsx">
+    <TwicWrapper gitHubUrl="src/components/TwicBasicGrid.vue">
       <TwicAbstract title="A basic example">
         <p>
           TwicPics is a Responsive Image Service Solution (SaaS) that enables
@@ -83,7 +83,7 @@
 
 <script>
 export default {
-  name: "TwicBasicExample"
+  name: "TwicBasicExample",
 };
 </script>
 

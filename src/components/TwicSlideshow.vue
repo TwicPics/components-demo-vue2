@@ -1,39 +1,37 @@
 <template>
-  <!-- displays a carousel of responsive images -->
-  <TwicWrapper>
-    <div class="twic-slideshow-container">
-      <TwicAbstract
-        title="A Picture Carousel"
-        codeSandBoxUrl="https://codesandbox.io/s/twicpics-x-vue2-carousel-5zhu43"
-        codeSandBoxName="TwicPics x Vue - Picture Carousel"
-      >
+  <div id="twic-slideshow-container">
+    <TwicWrapper gitHubUrl="src/components/TwicSlideshow.vue">
+      <TwicAbstract title="A Picture Carousel">
         <p>
           Use TwicPics for automatic lazy-loading, CLS optimization and art
           directions adaptation.
+        </p>
+        <p>
+          Monitor the&nbsp;
+          <a href="/state" target="_blank" rel="noreferrer">
+            loading status&nbsp;
+          </a>
+          &nbsp; of your media with<Code>onStateChange</Code>callback property.
         </p>
         <p>
           <strong>Change the width of your browser</strong> to see the image
           aspect-ratio adapt according to the CSS rules.
         </p>
       </TwicAbstract>
-      <Slideshow :images="images"></Slideshow>
-    </div>
-  </TwicWrapper>
+      <div class="slideshow-container">
+        <Slideshow :images="images" />
+      </div>
+    </TwicWrapper>
+  </div>
 </template>
 
 <script>
-import Slideshow from "./Slideshow.vue";
-import {
-  TwicAbstract,
-  TwicWrapper,
-} from "@twicpics/components-demo-wrapper/vue";
+import Slideshow from "../components/slideshow/Slideshow.vue";
 
 export default {
   name: "TwicSlideshow",
   components: {
     Slideshow,
-    TwicAbstract,
-    TwicWrapper,
   },
   data() {
     return {
@@ -65,8 +63,10 @@ export default {
 </script>
 
 <style lang="scss">
-.twic-slideshow-container {
-  margin: auto;
-  width: 75%;
+#twic-slideshow-container {
+  .slideshow-container {
+    margin: auto;
+    width: 80%;
+  }
 }
 </style>

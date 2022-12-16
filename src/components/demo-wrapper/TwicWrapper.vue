@@ -9,28 +9,28 @@
             alt="TwicPics logo"
           />
           <span>x</span>
-          <img class="framework-logo" :src="LOGO_SRC" alt="React Logo" />
+          <img class="framework-logo" :src="frameworkLogo" alt="React Logo" />
         </h1>
       </a>
       <div class="ribbon">
         <div>
           <a
             target="_blank"
-            :href="_gitHubUrl"
+            :href="gitHubRedirect"
             rel="noreferrer"
             title="Open in Github"
           >
-            <img class="github" :src="GITHUB_LOGO" alt="Open in Github" />
+            <img class="github" :src="gitHubLogo" alt="Open in Github" />
           </a>
           <a
             target="_blank"
-            :href="_codeSandBoxUrl"
+            :href="onlineUrl"
             rel="noreferrer"
             title="Open in StackBlitz"
           >
             <img
               class="github"
-              :src="STACKBLITZ_LOGO"
+              :src="stackBlitzLogo"
               alt="Open in StackBlitz"
             />
           </a>
@@ -39,7 +39,7 @@
       <div class="tags-container">
         <div class="tag tag-components">@twicpics-components</div>
         <a
-          :href="REDIRECT"
+          :href="documentationUrl"
           target="_blank"
           class="documentation-link tag tag--bg-purple-rain"
           rel="noreferrer"
@@ -53,30 +53,32 @@
 </template>
 
 <script>
+const ONLINE_URL = `https://stackblitz.com/edit/github-wpprt7?file=`;
+const GITHUB = `https://github.com/TwicPics/components-demo-vue2`;
 export default {
   name: "TwicWrapper",
   props: {
     gitHubUrl: {
       type: String,
-      required: false
-    }
+      required: false,
+    },
   },
   data() {
     return {
-      CODESANDBOX: `https://stackblitz.com/edit/github-wpprt7?file=`,
-      GITHUB: `https://github.com/TwicPics/components-demo-vue2`,
-      GITHUB_LOGO: `/assets/github-mark-white.svg`,
-      LOGO_SRC: `https://assets.twicpics.com/demo/@twicpics-components/logos/vue.png`,
-      REDIRECT: `https://www.twicpics.com/docs/components/vue2?utm_source=github&utm_medium=organic&utm_campaign=components`,
-      STACKBLITZ_LOGO: `/assets/stackblitz.svg`,
-      _codeSandBoxUrl: ``,
-      _gitHubUrl: ``
+      onlineUrl: ``,
+      documentationUrl: `https://www.twicpics.com/docs/components/vue2?utm_source=github&utm_medium=organic&utm_campaign=components`,
+      frameworkLogo: `https://assets.twicpics.com/demo/@twicpics-components/logos/vue.png`,
+      gitHubLogo: `assets/github-mark-white.svg`,
+      gitHubRedirect: `https://www.twicpics.com/docs/components/vue2?utm_source=github&utm_medium=organic&utm_campaign=components`,
+      stackBlitzLogo: `/assets/stackblitz.svg`,
     };
   },
   created() {
-    this._codeSandBoxUrl = `${CODESANDBOX}${gitHubUrl || "README.md"}`;
-    this._gitHubUrl = gitHubUrl ? `${GITHUB}/blob/main/${gitHubUrl}` : GITHUB;
-  }
+    this.onlineUrl = `${ONLINE_URL}${this.gitHubUrl || "README.md"}`;
+    this.gitHubRedirect = this.gitHubUrl
+      ? `${GITHUB}/blob/main/${this.gitHubUrl}`
+      : GITHUB;
+  },
 };
 </script>
 
