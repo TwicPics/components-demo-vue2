@@ -96,7 +96,7 @@
           />
           <span>
             <span>
-              <Code>anchor="{actualHorizontal.anchor}"</Code>
+              <Code>anchor={{ actualHorizontal.anchor }}</Code>
               <Code>mode="cover"</Code>
             </span>
           </span>
