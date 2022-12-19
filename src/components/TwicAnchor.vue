@@ -129,7 +129,7 @@ export default {
     return {
       horizontalConfig: [
         {
-          anchor: `center`,
+          anchor: undefined,
         },
         {
           anchor: `left`,
@@ -141,7 +141,7 @@ export default {
       indiceConfig: 0,
       verticalConfig: [
         {
-          anchor: `center`,
+          anchor: undefined,
         },
         {
           anchor: `top`,
