@@ -1,6 +1,6 @@
 # TwicPics Components + Vue2
 
-This project is a demonstration project of [TwicPics Components](https://www.twicpics.com/docs/components/vue-2#vue-2?utm_source=github&utm_medium=organic&utm_campaign=components) using [Vue 2](https://v2.vuejs.org/).
+This project is a demonstration project of [TwicPics Components](https://www.twicpics.com/docs/components/vue-2?utm_source=github&utm_medium=organic&utm_campaign=components) using [Vue 2](https://v2.vuejs.org/).
 
 ## How to build
 
@@ -79,7 +79,7 @@ TwicPics components for `Vue2` comes as an `Vue2 Plugin` and is configured as [s
 
 An example of configuration is set within `main.js` file.
 
-All you have to do is set your configuration options to the desired values ([see documentation](https://www.twicpics.com/docs/components/vue-2#setup-options)).
+All you have to do is set your configuration options to the desired values ([see documentation](https://www.twicpics.com/docs/components/vue-2?utm_source=github&utm_medium=organic&utm_campaign=components#setup-options)).
 
 ## Examples
 
