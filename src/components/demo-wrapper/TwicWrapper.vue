@@ -69,7 +69,7 @@ export default {
       documentationUrl: `https://www.twicpics.com/docs/components/vue2?utm_source=github&utm_medium=organic&utm_campaign=components`,
       frameworkLogo: `https://assets.twicpics.com/demo/@twicpics-components/logos/vue.png`,
       gitHubLogo: `assets/github-mark-white.svg`,
-      gitHubRedirect: `https://www.twicpics.com/docs/components/vue2?utm_source=github&utm_medium=organic&utm_campaign=components`,
+      gitHubRedirect: ``,
       stackBlitzLogo: `/assets/stackblitz.svg`,
     };
   },

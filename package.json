@@ -1,6 +1,9 @@
 {
-  "name": "vue",
-  "version": "0.1.0",
+  "name": "components-demo-vue2",
+  "author": "TwicPics <hello@twic.pics> (https://www.twicpics.com)",
+  "description": "Demonstration of TwicPics components in a Vue2 project.",
+  "license": "MIT",
+  "version": "0.0.1",
   "private": true,
   "scripts": {
     "serve": "yarn && vue-cli-service serve",
