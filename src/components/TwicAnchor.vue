@@ -25,11 +25,9 @@
             >left</Code
           >
           ,&nbsp;
-          <Code>right</Code>,<Code>top-left</Code>,<Code>top-right</Code>,<Code
-            >bottom-left</Code
-          >
-          and&nbsp;
-          <Code>bottom-right</Code>.
+          <Code>right</Code
+          >,<Code>top-left</Code>,<Code>top-right</Code>,<Code>bottom-left</Code>,
+          <Code>bottom-right</Code>and&nbsp;<Code>center</Code>.
         </p>
         <p>
           Please note that anchor is applied after an eventual transformation
@@ -129,7 +127,7 @@ export default {
     return {
       horizontalConfig: [
         {
-          anchor: undefined,
+          anchor: `center`,
         },
         {
           anchor: `left`,
@@ -141,7 +139,7 @@ export default {
       indiceConfig: 0,
       verticalConfig: [
         {
-          anchor: undefined,
+          anchor: `center`,
         },
         {
           anchor: `top`,
