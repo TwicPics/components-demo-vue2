@@ -34,16 +34,16 @@
         <p>
           Please note that anchor is applied after an eventual transformation
           defined with&nbsp;
-          <a href="/preTransform" target="_blank" rel="noreferrer">
-            preTransform
-          </a>
+          <a href="/preTransform" target="_blank" rel="noreferrer"
+            >preTransform</a
+          >
           &nbsp;property.
         </p>
         <p>
           For a more specific positionning see&nbsp;
-          <a href="/position" target="_blank" rel="noreferrer"> position </a>
+          <a href="/position" target="_blank" rel="noreferrer">position</a>
           &nbsp;or&nbsp;
-          <a href="/focus" target="_blank" rel="noreferrer"> focus </a>
+          <a href="/focus" target="_blank" rel="noreferrer">focus</a>
           &nbsp;properties in for
           <Code>contain</Code>or <Code>cover</Code>mode respectively.
         </p>

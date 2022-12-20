@@ -37,7 +37,7 @@
         </ul>
         <p>
           The number provided must be between 0 and 1 and represents the degree
-          of colour blindness to be corrected.
+          of color blindness to be corrected.
         </p>
       </TwicAbstract>
       <div class="twic-testing-container">

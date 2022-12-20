@@ -20,8 +20,8 @@
         </p>
         <p>
           If you only need border-based positionning, you can also use&nbsp;
-          <a href="/anchor" target="_blank" rel="noreferrer"> anchor </a>
-          &nbsp; property.
+          <a href="/anchor" target="_blank" rel="noreferrer">anchor</a>
+          property.
         </p>
       </TwicAbstract>
       <div class="twic-testing-container">

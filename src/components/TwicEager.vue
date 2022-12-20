@@ -17,9 +17,9 @@
           </p>
           <p>
             See also the&nbsp;
-            <a href="/bulk-loading" target="_blank" rel="noreferrer">
-              TwicView Component
-            </a>
+            <a href="/bulk-loading" target="_blank" rel="noreferrer"
+              >TwicView Component</a
+            >
             &nbsp; which allows to load all the TwicImg and TwicVideo elements
             it contains in one block, but once TwicView arrives near the
             Viewport.

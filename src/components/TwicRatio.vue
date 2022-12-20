@@ -23,10 +23,9 @@
             "none" as in<Code>ratio="none"</Code>. In this case the media
             displayed has a "free" ratio defined by the dimensions of its
             container. Particularly useful in the case of&nbsp;
-            <a href="/hero" target="_blank" rel="noreferrer">
-              image or video hero
-            </a>
-            .
+            <a href="/hero" target="_blank" rel="noreferrer"
+              >image or video hero</a
+            >.
           </li>
         </ul>
         <p>

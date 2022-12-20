@@ -19,7 +19,7 @@
         </p>
         <p>
           See also the&nbsp;
-          <a href="/eager" target="_blank" rel="noreferrer"> eager property </a>
+          <a href="/eager" target="_blank" rel="noreferrer">eager property</a>
           &nbsp; that disables lazy loading for a given media.
         </p>
       </TwicAbstract>

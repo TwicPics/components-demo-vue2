@@ -21,10 +21,9 @@
           </p>
           <p>
             This is often the case when using&nbsp;
-            <a href="/hero" target="_blank" rel="noreferrer">
-              hero images and videos
-            </a>
-            .
+            <a href="/hero" target="_blank" rel="noreferrer"
+              >hero images and videos</a
+            >.
           </p>
         </TwicAbstract>
         <div class="hero">
