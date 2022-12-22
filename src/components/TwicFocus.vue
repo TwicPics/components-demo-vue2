@@ -1,6 +1,6 @@
 <template>
   <div id="twic-focus-container">
-    <TwicWrapper gitHubUrl="src/components/TwicFocus.vue">
+    <TwicWrapper filename="src/components/TwicFocus.vue">
       <TwicAbstract title="focus property">
         <p>
           <strong>

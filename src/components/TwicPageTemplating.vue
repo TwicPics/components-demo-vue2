@@ -1,6 +1,6 @@
 <template>
   <div id="twic-working-without-images-container">
-    <TwicWrapper gitHubUrl="src/components/TwicPageTemplating.vue">
+    <TwicWrapper filename="src/components/TwicPageTemplating.vue">
       <TwicAbstract title="Prepare your page template">
         <p>
           When you develop the page template and can't or don't want to
@@ -14,10 +14,7 @@
         </p>
       </TwicAbstract>
       <div class="twic-testing-container">
-        <button
-          class="twic-button"
-          @click="() => (srcIsSet = !srcIsSet)"
-        >
+        <button class="twic-button" @click="() => (srcIsSet = !srcIsSet)">
           Click to {{ srcIsSet ? `unset` : `set` }} the src property
         </button>
       </div>

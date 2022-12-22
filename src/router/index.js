@@ -116,7 +116,7 @@ const routes = [
     component: TwicPlaceholder,
   },
   {
-    path: "/pretransform",
+    path: "/pre-transform",
     name: "TwicPreTransform",
     component: TwicPreTransform,
   },

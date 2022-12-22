@@ -1,6 +1,6 @@
 <template>
   <div id="twic-transition-container">
-    <TwicWrapper gitHubUrl="src/components/TwicTransition.vue">
+    <TwicWrapper filename="src/components/TwicTransition.vue">
       <TwicAbstract title="transition properties">
         <p>
           <strong>

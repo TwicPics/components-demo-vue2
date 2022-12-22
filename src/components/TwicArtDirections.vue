@@ -1,6 +1,6 @@
 <template>
   <div id="twic-art-direction-container">
-    <TwicWrapper gitHubUrl="src/components/TwicArtDirections.vue">
+    <TwicWrapper filename="src/components/TwicArtDirections.vue">
       <TwicAbstract title="Art directions with CSS media queries">
         <p>
           Setting up components using CSS enables hassle-free responsive

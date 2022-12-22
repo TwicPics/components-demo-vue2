@@ -1,6 +1,6 @@
 <template>
   <div id="twic-grid-and-zoom">
-    <TwicWrapper gitHubUrl="src/components/TwicGridAndZoom.vue">
+    <TwicWrapper filename="src/components/TwicGridAndZoom.vue">
       <TwicAbstract title="TwicPics grid & zoom">
         <p>A responsive grid of images enhanced by zoom transition.</p>
         <p>

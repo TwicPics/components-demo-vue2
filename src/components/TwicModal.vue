@@ -1,6 +1,6 @@
 <template>
   <div id="twic-modal-container">
-    <TwicWrapper gitHubUrl="src/components/TwicModal.vue">
+    <TwicWrapper filename="src/components/TwicModal.vue">
       <TwicAbstract title="A modal revealer">
         <p>Click on the image of your choice to reveal a modal.</p>
       </TwicAbstract>

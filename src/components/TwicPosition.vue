@@ -1,6 +1,6 @@
 <template>
   <div id="twic-position-container">
-    <TwicWrapper gitHubUrl="src/components/TwicPosition.vue">
+    <TwicWrapper filename="src/components/TwicPosition.vue">
       <TwicAbstract title="position property">
         <p>
           In<Code>contain</Code>mode,

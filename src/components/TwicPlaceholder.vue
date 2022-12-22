@@ -1,6 +1,6 @@
 <template>
   <div id="twic-placeholder-container">
-    <TwicWrapper gitHubUrl="src/components/TwicPlaceholder.vue">
+    <TwicWrapper filename="src/components/TwicPlaceholder.vue">
       <TwicAbstract title="placeholder property">
         <p>
           <strong>

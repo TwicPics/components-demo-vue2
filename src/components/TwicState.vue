@@ -1,6 +1,6 @@
 <template>
   <div id="twic-state-container">
-    <TwicWrapper gitHubUrl="src/components/TwicState.vue">
+    <TwicWrapper filename="src/components/TwicState.vue">
       <TwicAbstract title="state property and / or statechange event ">
         <p>
           You can access to the loading state of your image or video by passing

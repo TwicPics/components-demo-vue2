@@ -1,6 +1,6 @@
 <template>
   <div id="twic-eager-container">
-    <TwicWrapper gitHubUrl="src/components/TwicEager.vue">
+    <TwicWrapper filename="src/components/TwicEager.vue">
       <div class="demo-container">
         <TwicAbstract title="eager property">
           <p>
