@@ -47,7 +47,8 @@ export default {
   z-index: 1;
   /* Sit on top */
   left: 0;
-  top: 130px;
+  top: 100px;
+  padding-top: 30px;
   width: 100%;
   /* Full width */
   height: 100%;
