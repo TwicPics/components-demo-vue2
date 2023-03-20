@@ -26,6 +26,7 @@ import TwicState from "../components/TwicState.vue";
 import TwicSlideshow from "../components/TwicSlideshow.vue";
 import TwicStyleDriven from "../components/TwicStyleDriven.vue";
 import TwicTransition from "../components/TwicTransition.vue";
+import TwicZoom from "../components/TwicZoom.vue";
 
 Vue.use(VueRouter);
 
@@ -159,6 +160,11 @@ const routes = [
     path: "/transition",
     name: "TwicTransition",
     component: TwicTransition,
+  },
+  {
+    path: "/zoom",
+    name: "TwicZoom",
+    component: TwicZoom,
   },
 ];
 
