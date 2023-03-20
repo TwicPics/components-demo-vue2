@@ -225,7 +225,7 @@ export default {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin: 12px;
+      margin: 0px;
       height: 40px;
       text-align: center;
       font-size: 1em;

@@ -79,12 +79,3 @@ export default {
   },
 };
 </script>
-
-<style lang="scss">
-#twic-mode-container {
-  .twic-item .twic-w {
-    background-color: #00ffa3;
-    display: block;
-  }
-}
-</style>
