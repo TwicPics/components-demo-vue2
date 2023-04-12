@@ -1,6 +1,6 @@
 <template>
   <div id="twic-short-videos-container">
-    <TwicWrapper filename="src/components/TwicShortVideos.vue">
+    <TwicWrapper filename="pages/short-videos.vue">
       <TwicAbstract title="Short Videos">
         <p>
           The ideal candidates for TwicPics video integration are hero videos,
@@ -16,39 +16,54 @@
           display of a generated poster until the video is actually viewable.
         </p>
         <p>
-          This feature is available
-          <strong>for all our Pro and Enterprise customers</strong>.
+          The TwicPics API features three transformations that can be used to
+          <a
+            href="https://www.twicpics.com/docs/topics/video-optimization#video-slicing?utm_source=github&utm_medium=organic&utm_campaign=components#vue2"
+            target="_blank"
+            rel="noreferrer"
+          >
+            extract a portion of the original video
+          </a>
+          .
         </p>
         <br />
         Here the properties used in this example:
         <ul>
           <li>
+            <Code>from, to and duration</Code>:
+            <span>used to extract a portion of the original video.</span>
+          </li>
+          <li>
             <Code>intrinsic</Code>:
-            <span
-              >prevents video upscaling and limits the number of generated
-              variants.</span
-            >
+            <span>
+              prevents video upscaling and limits the number of generated
+              variants.
+            </span>
           </li>
           <li>
-            <Code>focus</Code>:<span
-              >changes the focus point coordinates of the image.</span
-            >
+            <Code>mode</Code>:
+            <span>
+              determines if the image fills or sits inside the area.
+            </span>
           </li>
           <li>
-            <Code>mode</Code>:<span
-              >determines if the image fills or sits inside the area.</span
-            >
-          </li>
-          <li>
-            <Code>placeholder</Code>:
-            <span
-              >helps optimize your CLS and implement the LQIP technique.</span
-            >
+            <Code>preTransform</Code>:
+            <span>
+              allows to perfom
+              <a
+                href="https://www.twicpics.com/docs/reference/transformations?utm_source=github&utm_medium=organic&utm_campaign=components#vue2"
+                target="_blank"
+                rel="noreferrer"
+              >
+                TwicPics API transformations
+              </a>
+              .
+            </span>
           </li>
           <li>
             <Code>ratio</Code>:
             <span>
-              &nbsp; determines the value of the width/height ratio of the image
+              determines the value of the width/height ratio of the image
               display area.
             </span>
           </li>
@@ -56,26 +71,8 @@
       </TwicAbstract>
       <div class="twic-grid">
         <div class="twic-item">
-          <TwicVideo
-            src="video/skater.mp4"
-            intrinsic="1280x720"
-            placeholder="preview"
-            ratio="16/9"
-          />
-          <span>
-            <Code>ratio="16/9"</Code>&<Code>mode="cover"</Code>: the video fills
-            the area
-          </span>
-        </div>
-        <div class="twic-item">
-          <TwicVideo
-            src="video/skater.mp4"
-            focus="center"
-            intrinsic="1280x720"
-            mode="cover"
-            placeholder="maincolor"
-          />
-          <span> Default values </span>
+          <TwicVideo src="video/skater.mp4" intrinsic="1280x720"></TwicVideo>
+          <span>Default values</span>
         </div>
         <div class="twic-item">
           <TwicVideo
@@ -83,24 +80,58 @@
             intrinsic="1280x720"
             placeholder="meancolor"
             mode="contain"
-            ratio="1"
-          />
-          <span>
-            <Code>ratio="1"</Code>&<Code>mode="contain"</Code>: the video sits
-            inside the area
-          </span>
+          ></TwicVideo>
+          <span> ratio="1" mode="contain" </span>
         </div>
         <div class="twic-item">
           <TwicVideo
             src="video/skater.mp4"
             intrinsic="1280x720"
-            placeholder="preview"
-            ratio="2/3"
-          />
-          <span>
-            <Code>ratio="2/3"</Code>,<Code>mode="cover"</Code>: the video fills
-            the area
-          </span>
+            ratio="16/9"
+          ></TwicVideo>
+          <span> ratio="16/9" </span>
+        </div>
+        <div class="twic-item">
+          <TwicVideo
+            src="video/skater.mp4"
+            intrinsic="1280x720"
+            pre-transform="flip=x"
+          ></TwicVideo>
+          <span>preTransform="flip=x"</span>
+        </div>
+        <div class="twic-item">
+          <TwicVideo
+            src="video/skater.mp4"
+            intrinsic="1280x720"
+            from="5.1"
+          ></TwicVideo>
+          <span>from="5.1"</span>
+        </div>
+        <div class="twic-item">
+          <TwicVideo
+            src="video/skater.mp4"
+            intrinsic="1280x720"
+            to="5.1"
+          ></TwicVideo>
+          <span>to="5.1"</span>
+        </div>
+        <div class="twic-item">
+          <TwicVideo
+            src="video/skater.mp4"
+            intrinsic="1280x720"
+            from="15.4"
+            to="16.6"
+          ></TwicVideo>
+          <span>from="15.4" to="16.6"</span>
+        </div>
+        <div class="twic-item">
+          <TwicVideo
+            src="video/skater.mp4"
+            intrinsic="1280x720"
+            from="15.4"
+            duration="1.2"
+          ></TwicVideo>
+          <span>from="15.4" duration="1.2"</span>
         </div>
       </div>
     </TwicWrapper>
@@ -108,6 +139,13 @@
 </template>
 <script>
 export default {
-  name: "TwicShortVideo",
-};
+  name: 'TwicShortVideo',
+}
 </script>
+<style lang="scss">
+#twic-short-videos-container {
+  .twic-item {
+    background-color: #1fffa6;
+  }
+}
+</style>
