@@ -20,6 +20,7 @@ import TwicPreTransform from "../components/TwicPreTransform.vue";
 import TwicPlaceholder from "../components/TwicPlaceholder.vue";
 import TwicPosition from "../components/TwicPosition.vue";
 import TwicRatio from "../components/TwicRatio.vue";
+import TwicRefit from "../components/TwicRefit.vue";
 import TwicSlider from "../components/TwicSlider.vue";
 import TwicShortVideos from "../components/TwicShortVideos.vue";
 import TwicState from "../components/TwicState.vue";
@@ -135,6 +136,11 @@ const routes = [
     path: "/ratio",
     name: "TwicRatio",
     component: TwicRatio,
+  },
+  {
+    path: "/refit",
+    name: "TwicRefit",
+    component: TwicRefit,
   },
   {
     path: "/slider",
