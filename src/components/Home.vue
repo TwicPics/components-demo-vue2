@@ -177,7 +177,7 @@ export default {
             },
             {
               route: `/refit`,
-              imgSrc: `components/refit/yellow-combi.jpg`,
+              imgSrc: `components/refit/dog-looking-water.jpg`,
               focus: `50px50p`,
               refit: `5p`,
               title: `refit`,
