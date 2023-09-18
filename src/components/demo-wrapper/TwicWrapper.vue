@@ -5,7 +5,7 @@
         <h1 class="heading-primary">
           <img
             class="twicpics-logo"
-            src="https://assets.twicpics.com/demo/@twicpics-components/logos/twicpics.svg"
+            src="https://assets.twicpics.com/demo/@twicpics-components/logos/twicpics-by-frontify.svg"
             alt="TwicPics logo"
           />
           <span>x</span>
@@ -132,7 +132,7 @@ $height: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
+  padding: 25px;
   border-bottom: 1px solid #e3e3e4;
   background-color: $bg-color;
   z-index: 10;
@@ -149,15 +149,22 @@ $height: 100px;
     font-weight: 400;
   }
   & .twicpics-logo {
-    aspect-ratio: 140/39;
-    width: 140px;
-  }
+      aspect-ratio: 300/58;
+      width: 165px;
+      @media (min-width: 640px) {
+        width: 250px;
+      }
+    }
   & .framework-logo {
     aspect-ratio: 16/9;
-    width: 120px;
+    width: 80px;
     position: relative;
     left: -8px;
+    @media (min-width: 640px) {
+        width: 120px;
+      }
   }
+
   & .tags-container {
     bottom: 0;
     display: flex;
@@ -243,6 +250,9 @@ $height: 100px;
         }
       }
     }
+  }
+  @media (min-width: 640px) {
+    padding: 15px;
   }
 }
 </style>
