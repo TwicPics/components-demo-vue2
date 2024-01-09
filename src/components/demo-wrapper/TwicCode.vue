@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "TwicCode"
+  name: "Code"
 };
 </script>
 
