@@ -18,7 +18,7 @@
         <p>
           The TwicPics API features three transformations that can be used to
           <a
-            href="https://www.twicpics.com/docs/topics/video-optimization#video-slicing?utm_source=github&utm_medium=organic&utm_campaign=components#vue2"
+            href="https://www.twicpics.com/docs/guides/video-optimization#video-slicing?utm_source=github&utm_medium=organic&utm_campaign=components#vue2"
             target="_blank"
             rel="noreferrer"
           >
