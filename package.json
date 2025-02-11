@@ -10,7 +10,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
-    "@twicpics/components": "0.31.2",
+    "@twicpics/components": "0.31.3",
     "core-js": "^3.40.0",
     "vue": "^2.7.14",
     "vue-router": "^3.6.5"
